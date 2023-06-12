@@ -1,0 +1,115 @@
+:root {
+    --clock-size: 200px;
+}
+
+.clock {
+    margin: auto;
+    width: var(--clock-size);
+    height: var(--clock-size);
+    border: 5px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.clock-middle {
+    position: absolute;
+    width: 4%;
+    height: 4%;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.hand-hour {
+    position: absolute;
+    width: 1.5%;
+    height: 16%;
+    background-color: black;
+    transform: rotate(90deg);
+    top: 50%;
+    transform-origin: top center;
+}
+
+.hand-minute {
+    position: absolute;
+    width: 1%;
+    height: 43%;
+    background-color: rgb(65, 65, 65);
+    top: 50%;
+    transform-origin: top center;
+}
+
+.hand-second {
+    position: absolute;
+    width: 0.5%;
+    height: 48%;
+    background-color: rgb(185, 185, 185);
+    top: 50%;
+    transform: rotate(210deg);
+    transform-origin: top center;
+}
+
+.hour {
+    width: 0.5%;
+    height: 12.5%;
+    background-color: rgb(228, 228, 228);
+    position: absolute;
+}
+
+.hr12 {
+    top: 1%;
+}
+
+.hr1 {
+    top: 1%;
+    right: 25%;
+}
+
+.hr2 {
+
+    right: 7%;
+    top: 19%;
+}
+
+.hr3 {
+    right: 7%;
+}
+
+.hr4 {
+    right: 7%;
+    bottom: 19%;
+}
+
+.hr5 {
+    bottom: 1%;
+    right: 25%;
+}
+
+.hr6 {
+    bottom: 1%;
+}
+
+.hr7 {
+    bottom: 1%;
+    left: 25%;
+}
+
+.hr8 {
+    left: 7%;
+    bottom: 19%;
+}
+
+.hr9 {
+    left: 7%;
+}
+
+.hr10 {
+    left: 7%;
+    top: 19%;
+}
+
+.hr11 {
+    top: 1%;
+    left: 25%;
+}
