@@ -3,6 +3,10 @@ var minutesHand = document.querySelector(".hand-minute");
 var secondHand = document.querySelector(".hand-second");
 var clock = document.querySelector(".clock");
 
+document.querySelector("input").addEventListener("input", (e) => {
+  document.documentElement.style.setProperty("--clock-size", e.target.value + "px");
+});
+
 for (var i = 1; i < 13; i++) {
   const newDiv = clock.insertBefore(document.createElement("p"), clock.firstChild);
   newDiv.textContent = i;
@@ -33,7 +37,7 @@ setInterval(() => {
   secondHand.style.transform = `rotate(${res.secDeg}deg)`;
   minutesHand.style.transform = `rotate(${res.minDeg}deg)`;
   hourHand.style.transform = `rotate(${res.hrDeg}deg)`;
-}, 1000);
+}, 500);
 
 function getDegrees() {
   var date = new Date();
