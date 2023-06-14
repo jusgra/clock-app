@@ -4,20 +4,29 @@ var secondHand = document.querySelector(".hand-second");
 var clock = document.querySelector(".clock");
 
 for (var i = 1; i < 13; i++) {
-  const newDiv = clock.insertBefore(document.createElement("div"), clock.firstChild);
+  const newDiv = clock.insertBefore(document.createElement("p"), clock.firstChild);
+  newDiv.textContent = i;
   newDiv.classList.add("hr" + i);
   newDiv.classList.add("hour");
-  newDiv.style.transform = `rotate(${30 * i}deg)`;
+  // newDiv.style.transform = `rotate(${30 * i}deg)`;
 }
 
+var res = getDegrees();
+secondHand.style.transform = `rotate(${res.secDeg}deg)`;
+minutesHand.style.transform = `rotate(${res.minDeg}deg)`;
+hourHand.style.transform = `rotate(${res.hrDeg}deg)`;
+
 //DEV ENV for testing hour mark positions
+
+// secondHand.style.transform = `rotate(210deg)`;
 
 // var deg = 0;
 // setInterval(() => {
 //   secondHand.style.transform = `rotate(${deg}deg)`;
-//   deg += 30;
-//   if (deg > 360) deg = 30;
-// }, 500);
+//   const spinDegree = 30;
+//   deg += spinDegree;
+//   if (deg > 360) deg = spinDegree;
+// }, 400);
 
 setInterval(() => {
   res = getDegrees();
@@ -33,5 +42,5 @@ function getDegrees() {
   var minDeg = date.getMinutes() * 6 + date.getSeconds() * 0.1;
   var hrDeg = date.getHours() * 30 + date.getMinutes() * 0.5 + date.getSeconds() * (360 / 12 / 60 / 60);
 
-  return { secDeg: secDeg + 180, minDeg: minDeg + 180, hrDeg: hrDeg + 180 };
+  return { secDeg: (secDeg + 180) * -1, minDeg: (minDeg + 180) * -1, hrDeg: (hrDeg + 180) * -1 };
 }
