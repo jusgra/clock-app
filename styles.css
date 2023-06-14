@@ -2,15 +2,44 @@
     --clock-size: 500px;
 }
 
-.clock {
-    margin: auto;
-    width: var(--clock-size);
-    height: var(--clock-size);
-    border: 5px solid;
+body {
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, rgba(34, 195, 155, 1) 0%, rgba(169, 71, 71, 1) 50%, rgba(253, 251, 45, 1) 100%);
+}
+
+.text {
+    text-align: center;
+    font-family: 'Gasoek One', sans-serif;
+    letter-spacing: 1rem;
+    margin-right: -1rem;
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.507);
     position: relative;
+    top: -40%;
+}
+
+/* ------------ CLOCK ------------- */
+.clock {
+    width: var(--clock-size);
+    height: var(--clock-size);
+    /* by trial and error I found that optimal font size for clock is
+    3rem at 500px. Then you find out the ratio between px and rem by doing
+    500/3. Then you take current clock size, and divide it by ratio
+    which tells you how much rem you need for current clock size. And 
+    lastly you mutiple the calculated rem times 16, because 16px = 1rem */
+    font-size: calc((var(--clock-size)/(500/3))*16);
+    border: 5px solid;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.692);
+    background-color: white;
 }
 
 .clock-middle {
@@ -21,95 +50,92 @@
     background-color: black;
 }
 
-.hand-hour {
+.hand {
     position: absolute;
+    transform-origin: top center;
+    top: 50%;
+    border-radius: 100px;
+}
+
+.hand-hour {
     width: 1.5%;
-    height: 16%;
+    height: 20%;
     background-color: black;
     transform: rotate(90deg);
-    top: 50%;
-    transform-origin: top center;
 }
 
 .hand-minute {
-    position: absolute;
     width: 1%;
     height: 43%;
     background-color: rgb(65, 65, 65);
-    top: 50%;
-    transform-origin: top center;
 }
 
 .hand-second {
-    position: absolute;
     width: 0.5%;
     height: 48%;
     background-color: rgb(185, 185, 185);
-    top: 50%;
-    transform: rotate(210deg);
-    transform-origin: top center;
 }
 
+/* ------------ CLOCK HOURS ------------- */
 .hour {
-    width: 0.5%;
-    height: 12.5%;
-    background-color: rgb(228, 228, 228);
     position: absolute;
+    font-size: 100%;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+}
+
+.hr1 {
+    top: 1%;
+    left: 23%;
 }
 
 .hr12 {
     top: 1%;
 }
 
-.hr1 {
+.hr11 {
     top: 1%;
-    right: 25%;
+    right: 23%;
 }
 
-.hr2 {
-
-    right: 7%;
+.hr10 {
+    right: 1%;
     top: 19%;
 }
 
-.hr3 {
-    right: 7%;
+.hr9 {
+    right: 1%;
 }
 
-.hr4 {
-    right: 7%;
+.hr8 {
+    right: 1%;
     bottom: 19%;
 }
 
-.hr5 {
+.hr7 {
     bottom: 1%;
-    right: 25%;
+    right: 23%;
 }
 
 .hr6 {
     bottom: 1%;
 }
 
-.hr7 {
+.hr5 {
     bottom: 1%;
-    left: 25%;
+    left: 23%;
 }
 
-.hr8 {
-    left: 7%;
+.hr4 {
+    left: 1%;
     bottom: 19%;
 }
 
-.hr9 {
-    left: 7%;
+.hr3 {
+    left: 1%;
 }
 
-.hr10 {
-    left: 7%;
+.hr2 {
+    left: 1%;
     top: 19%;
-}
-
-.hr11 {
-    top: 1%;
-    left: 25%;
 }
