@@ -6,22 +6,32 @@
     <title>Clock</title>
     <link rel="icon" href="https://em-content.zobj.net/thumbs/120/microsoft/319/ten-oclock_1f559.png" />
     <link rel="stylesheet" href="./styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Rubik:wght@300&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Oswald:wght@200&family=Rubik:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="inputs">
-      <input class="numer" type="number" value="400" />
       <input class="ranger" type="range" min="100" max="650" value="400" />
+
+      <label class="ranger-px" for="ranger">400 px </label>
+      <p class="ranger-title">Clock Size</p>
     </div>
-    <div class="text"><p>aa</p></div>
-    <div class="clock">
-      <div class="hand hand-hour"></div>
-      <div class="hand hand-minute"></div>
-      <div class="hand hand-second"></div>
-      <div class="clock-middle"></div>
+    <div class="text textTop">
+      <p>What time is it<span class="hint">?</span></p>
+    </div>
+    <div class="container">
+      <div class="clock">
+        <div class="hand hand-hour"></div>
+        <div class="hand hand-minute"></div>
+        <div class="hand hand-second"></div>
+        <div class="clock-middle"></div>
+      </div>
+    </div>
+    <div class="text textBot">
+      <p>The clock is running backwards 🔄️</p>
     </div>
     <script src="./index.js"></script>
   </body>
 </html>
-<!-- 3D FLIP -->
-<!-- ANSWER BUTTON -->
