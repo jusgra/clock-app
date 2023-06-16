@@ -8,4 +8,4 @@ Initial working clock commit, no CSS. Still have some thoughts on changing the d
 Added pretty CSS, and someone made the clock run backwards, but it still shows the correct time, so decided to keep it that way.
 
 ### June 16th commit
-Added range input for clock size option, made the clock look little more "backward", 
+Added range input for clock size option, made the clock look little more "backward". If you can't tell the time, there's a help option hidden behind the **?**
