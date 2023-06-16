@@ -2,13 +2,39 @@ var hourHand = document.querySelector(".hand-hour");
 var minutesHand = document.querySelector(".hand-minute");
 var secondHand = document.querySelector(".hand-second");
 var clock = document.querySelector(".clock");
+const hours = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
+
+var rngInput = document.querySelector(".ranger");
+var rngLabel = document.querySelector(".ranger-px");
+var hint = document.querySelector(".hint");
+
+var clockDeg = 180;
+var hasRotated = false;
+hint.addEventListener("click", () => {
+  clock.style.transform = `rotateY(${clockDeg}deg)`;
+  const textBot = document.querySelector(".textBot>p");
+  textBot.style.transform = `rotateX(90deg)`;
+  setTimeout(() => {
+    textBot.style.transform = `rotateX(0deg)`;
+    if (!hasRotated) textBot.textContent = "Clock is running properly now 👍";
+    else textBot.textContent = "The clock is running backwards 🔄️";
+    hasRotated = !hasRotated;
+  }, 500);
+  clockDeg += 180;
+});
+
+rngInput.addEventListener("input", (e) => {
+  document.documentElement.style.setProperty("--clock-size", e.target.value + "px");
+  rngLabel.textContent = e.target.value + " px";
+});
 
 for (var i = 1; i < 13; i++) {
   const newDiv = clock.insertBefore(document.createElement("p"), clock.firstChild);
+  // newDiv.textContent = hours[i - 1];
   newDiv.textContent = i;
   newDiv.classList.add("hr" + i);
   newDiv.classList.add("hour");
-  // newDiv.style.transform = `rotate(${30 * i}deg)`;
+  newDiv.style.transform = `rotateY(180deg)`;
 }
 
 var res = getDegrees();
@@ -26,14 +52,14 @@ hourHand.style.transform = `rotate(${res.hrDeg}deg)`;
 //   const spinDegree = 30;
 //   deg += spinDegree;
 //   if (deg > 360) deg = spinDegree;
-// }, 400);
+// }, 500);
 
 setInterval(() => {
   res = getDegrees();
   secondHand.style.transform = `rotate(${res.secDeg}deg)`;
   minutesHand.style.transform = `rotate(${res.minDeg}deg)`;
   hourHand.style.transform = `rotate(${res.hrDeg}deg)`;
-}, 1000);
+}, 500);
 
 function getDegrees() {
   var date = new Date();
