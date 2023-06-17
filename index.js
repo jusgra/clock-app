@@ -42,6 +42,10 @@ secondHand.style.transform = `rotate(${res.secDeg}deg)`;
 minutesHand.style.transform = `rotate(${res.minDeg}deg)`;
 hourHand.style.transform = `rotate(${res.hrDeg}deg)`;
 
+document.querySelector(".color-input").addEventListener("input", (e) => {
+  document.documentElement.style.setProperty("--clock-background-color", e.target.value);
+});
+
 //DEV ENV for testing hour mark positions
 
 // secondHand.style.transform = `rotate(210deg)`;

@@ -1,5 +1,7 @@
 :root {
     --clock-size: 400px;
+    --clock-background-color: white;
+    --text-color: #884A39;
 }
 
 body {
@@ -7,8 +9,8 @@ body {
     display: grid;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
     height: 100vh;
-
-    background: linear-gradient(45deg, rgba(34, 195, 155, 1) 0%, rgba(169, 71, 71, 1) 50%, rgba(253, 251, 45, 1) 100%);
+    /* background: linear-gradient(45deg, #ffd79c65 0%, #F1C27B 100%); */
+    background-color: #F9E0BB;
 }
 
 body>div {
@@ -28,7 +30,7 @@ body>div {
 .text>p {
     margin: 0;
     font-size: 4rem;
-    color: rgba(0, 0, 0, 0.507);
+    color: var(--text-color);
     transition: 0.5s;
 }
 
@@ -50,7 +52,46 @@ body>div {
     backface-visibility: hidden;
 }
 
-.inputs {
+
+.color-input-box>* {
+    position: absolute;
+}
+
+.color-input-box {
+    grid-area: 2/3/3/4;
+    position: relative;
+}
+
+.color-label {
+    font-family: Oswald;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-top: -60px;
+    right: 2%;
+}
+
+.color-input {
+    right: 2%;
+    margin-bottom: -60px;
+    width: 275px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    transition: filter 0.3s;
+}
+
+.color-input:hover {
+    filter: drop-shadow(2px 2px 5px #00000080);
+    cursor: pointer;
+}
+
+.color-input::-webkit-color-swatch {
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.size-input {
     font-family: Oswald;
     grid-area: 2/1/3/2;
     justify-self: center;
@@ -58,7 +99,7 @@ body>div {
     flex-direction: column;
 }
 
-.inputs>* {
+.size-input>* {
     position: absolute;
 }
 
@@ -69,18 +110,22 @@ body>div {
     transform: rotate(-90deg);
 }
 
+.ranger::-webkit-slider-thumb {
+    color: red;
+}
+
 .ranger-px {
     margin-bottom: -50px;
     left: calc(0% + 50px);
     grid-column: span 2;
     font-size: 3rem;
     order: 1;
-    color: rgba(0, 0, 0, 0.507);
+    color: var(--text-color);
 
 }
 
 .ranger-title {
-    color: rgba(0, 0, 0, 0.637);
+    color: var(--text-color);
     left: calc(0% + 50px);
     font-size: 3rem;
     margin: 0;
@@ -103,7 +148,7 @@ body>div {
 
 .container {
     grid-area: 2/2/3/3;
-    perspective: 800px;
+    perspective: 3500px;
 
 }
 
@@ -111,7 +156,6 @@ body>div {
     transition: transform 1s ease-in-out;
     width: var(--clock-size);
     height: var(--clock-size);
-    /* transform: rotateY(360deg); */
     /* by trial and error I found that optimal font size for clock is
     3rem at 500px. Then you find out the ratio between px and rem by doing
     500/3. Then you take current clock size, and divide it by ratio
@@ -125,7 +169,7 @@ body>div {
     align-items: center;
     position: relative;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.692);
-    background-color: rgb(255, 255, 255);
+    background-color: var(--clock-background-color);
 }
 
 .clock-middle {
