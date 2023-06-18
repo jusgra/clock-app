@@ -1,5 +1,5 @@
 # Analog Clock [webpage](https://jusgra.github.io/clock-app/)
-## Working analog clock, that displays real time. Got an idea from the internet, since I need practice, I thought why not make it myself?
+## Got a simple working Analog Clock idea from the internet that displays real time. Since I need practice, I thought why not make it myself? Also added my little twists
 
 ### June 12th push
 - Initial working clock commit with no CSS
