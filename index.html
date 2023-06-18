@@ -2,26 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clock</title>
     <link rel="icon" href="https://em-content.zobj.net/thumbs/120/microsoft/319/ten-oclock_1f559.png" />
     <link rel="stylesheet" href="./styles.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Oswald:wght@200&family=Rubik:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Gasoek+One&family=Oswald:wght@200&family=Roboto+Mono:wght@100;200&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <div class="inputs">
-      <input class="ranger" type="range" min="100" max="650" value="400" />
-
-      <label class="ranger-px" for="ranger">400 px </label>
-      <p class="ranger-title">Clock Size</p>
-    </div>
-    <div class="text textTop">
+    <div class="text text-top">
       <p>What time is it<span class="hint">?</span></p>
     </div>
-    <div class="container">
+    <div class="help">
+      <p>HELP</p>
+    </div>
+    <div class="alert-background"></div>
+    <div class="alert-container">
+      <div class="alert-close">
+        <p>X</p>
+      </div>
+      <p>So as it appears the clock is running backwards 🤔 However, there is a way to make it look proper again 🔧</p>
+      <p>Try and hover over all elements, one of them clicks, even tho its not supposed to...</p>
+    </div>
+    <div class="size-input-box">
+      <p class="size-input-title">Clock Size</p>
+      <label class="size-input-label" for="ranger">400 px</label>
+      <input class="size-input" type="range" min="100" max="650" value="400" />
+    </div>
+    <div class="clock-container">
       <div class="clock">
         <div class="hand hand-hour"></div>
         <div class="hand hand-minute"></div>
@@ -29,8 +38,12 @@
         <div class="clock-middle"></div>
       </div>
     </div>
-    <div class="text textBot">
-      <p>The clock is running backwards 🔄️</p>
+    <div class="color-input-box">
+      <label class="color-label">Clock background</label>
+      <input class="color-input" type="color" value="#ffffff" />
+    </div>
+    <div class="text text-bot">
+      <p>The clock is running backwards🔄️But it still shows the correct time</p>
     </div>
     <script src="./index.js"></script>
   </body>
