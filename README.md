@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Analog Clock  <a href="https://jusgra.github.io/clock-app/">website</a></1>
+  <h1>Analog Clock 🕑 <a href="https://jusgra.github.io/clock-app/">website</a></1>
 </div>
 
 ## Got a simple working Analog Clock idea from the internet that displays real time. Since I need practice, I thought why not make it myself? Also added some other functionalities 🛠️
