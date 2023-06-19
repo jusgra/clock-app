@@ -28,3 +28,6 @@
 ![image](https://github.com/jusgra/clock-app/assets/91288874/3380da37-16be-4840-bc56-60fafc976a95)
 
 ![image](https://github.com/jusgra/clock-app/assets/91288874/b960b6d4-706e-400b-80f1-37f8a82a4dd1)
+
+![image](https://github.com/jusgra/clock-app/assets/91288874/95c43316-9437-4b82-96d5-0eae9597f7c5)
+
